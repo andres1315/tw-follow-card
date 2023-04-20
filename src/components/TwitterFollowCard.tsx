@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useState } from 'react'
 
-export function TwitterFollowCard({userName, name, initIsFollowing}: Props){
-
+export function TwitterFollowCard ({ userName, name, initIsFollowing }: Props) {
   const [isFollowing, setIsFollowing] = useState(initIsFollowing)
-  
+
   const changeFollow = () => {
     setIsFollowing(!isFollowing)
   }
@@ -18,16 +17,15 @@ export function TwitterFollowCard({userName, name, initIsFollowing}: Props){
         </div>
       </header>
       <aside>
-        <button onClick={()=>changeFollow()} className={`tw-followCard-button ${isFollowing ? 'is-following':''}`}>{isFollowing ? 'Dejar de Seguir' : 'Seguir'}</button>
+        <button onClick={() => { changeFollow() }} className={`tw-followCard-button ${isFollowing ? 'is-following' : ''}`}>{isFollowing ? 'Dejar de Seguir' : 'Seguir'}</button>
       </aside>
     </article>
   )
 }
 
- 
-interface Props{
-  userName: string;
-  name: string;
-  initIsFollowing: boolean;
+interface Props {
+  userName: string
+  name: string
+  initIsFollowing: boolean
 
 }
